@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4" *ngFor="let product of productList">
+            <div class="product-card"  >
+                <div class="img">
+                    <img src={{product.imageUrl}} alt="">
+                </div>
+                <div class="name">{{product.name}}</div>
+                <div class="price"><b>Rs. </b><b>{{product.offerPrice}}</b><span>{{product.price}}</span> </div>
+                <div class="action text-center pb-4">
+                    <button mat-raised-button color="accent" [routerLink] = "['/editProduct']" [state]="{ product:product }">Edit</button>
+                    <button mat-raised-button color="warn" class="ms-3" (click)="deteteProduct(product.productId)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

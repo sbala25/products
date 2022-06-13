@@ -1,0 +1,30 @@
+<div class="container ">
+    <div class="authwarp">
+    <div class="text-center authLogo">
+        <img src="../../../assets/images/logo.png" alt="">
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>User Name</mat-label>
+            <input type="email" matInput formControlName="username"
+                placeholder="Ex. pat@example.com">
+            <mat-error *ngIf="loginForm.controls['username'].status == 'INVALID'">
+            Please enter a valid email / User Name
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password">
+            <mat-error *ngIf="loginForm.controls['password'].status == 'INVALID'">
+            Password is required
+            </mat-error>
+        </mat-form-field>
+        <div class="text-center">
+            <button mat-raised-button color="accent" type="submit">Login</button>
+        </div>
+        
+    </form>
+    <div class="mt-3 text-center">Do not have account  <button mat-button color="warn" routerLink="/">Signup</button></div>
+    </div>
+</div>

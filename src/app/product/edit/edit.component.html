@@ -1,0 +1,44 @@
+<div class="container ">
+    <div class="authwarp">
+    <form [formGroup]="editProductForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input type="text" matInput formControlName="name"
+                placeholder="Rahul Roy">
+            <mat-error *ngIf="editProductForm.controls['name'].status == 'INVALID'">
+            Please enter a valid Name
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Price</mat-label>
+            <input type="number" matInput formControlName="price"
+                >
+            <mat-error *ngIf="editProductForm.controls['price'].status == 'INVALID'">
+            Please enter a price
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Offer Price</mat-label>
+            <input type="number" matInput formControlName="offerPrice"
+                >
+            <mat-error *ngIf="editProductForm.controls['offerPrice'].status == 'INVALID'">
+            Please enter a price
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>imageUrl</mat-label>
+            <input type="text" matInput formControlName="imageUrl">
+            <mat-error *ngIf="editProductForm.controls['imageUrl'].status == 'INVALID'">
+            Password minimum lenght is 6
+            </mat-error>
+        </mat-form-field>
+        <div class="text-center">
+            <button mat-raised-button color="accent" type="submit">Add product</button>
+        </div>  
+    </form>
+    </div>
+</div>
+
+
